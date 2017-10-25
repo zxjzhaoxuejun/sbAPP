@@ -20,6 +20,7 @@ ul {
 a {
     outline: none;
     text-decoration: none;
+    color: @text-color;
 }
 
 .body-bg {
@@ -46,7 +47,7 @@ a {
 }
 
 .margin-head {
-    margin-top: 43px;
+    margin: 43px 0;
 }
 .margin-big-head {
     margin-top: 58px;
@@ -59,17 +60,20 @@ a {
     .sb-title-text {
         line-height: 44px;
         color: @title-color;
-        background: @white-color;
+//      background: @white-color;
         font-size: @font-size-s16;
+        border-bottom: 1px @border-grey solid;
         padding: 0 10px;
     }
 
     .sb-title-con {
         display: inline-block;
         &:before {
-            width: 1px;
+            display: inline-block;
+            width: 2px;
+            height: 15px;
             content: " ";
-            border: 1px @blue-bg solid;
+//          border: 1px @blue-bg solid;
             background: @blue-bg;
             margin-right: 5px;
         }
@@ -113,14 +117,13 @@ a {
     .img-icon{
         width: 56px;
         height: 56px;
-        background: @orange-color;
         margin: 0 auto;
         .border-radius(50%);
         
     }
     
     .img-text{
-        padding: 6px 0;
+        padding-top: 6px;
         color: @title-color;
         text-align: center;
         font-weight: bold;
@@ -131,6 +134,36 @@ a {
          font-size: 30px;
          margin:0 13px;
      }
+     
+     .list-items{
+         padding: 0 15px;
+         border-right: 1px #ccc solid;
+         
+         .icon-size1{
+             float: left;
+             font-size: 54px;
+             color:#999;
+        }
+        
+        .icon-size2{
+            text-align: center;
+            font-size: 32px;
+            color:#999;
+        }
+        
+        .num-text{
+            font-size: @font-size-s16;
+            color: @brand-red;
+            text-align: center; 
+            padding: 6px 0;
+        }
+        
+        .title-text{
+            text-align: center;
+           
+        }
+     }
+   
 }
 
 .qrcode-mode{
@@ -147,6 +180,93 @@ a {
     }
 }
 
+.sb-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 15px;
+    background: @blue-bg;
+    color: #ffffff;
+    text-align: center;
+    .border-radius(3px);
+}
+
+.sb-btn-primary {
+    background: #ffffff;
+    border: 1px @blue-bg solid;
+    color: @text-color;
+}
+
+//登录
+.form-mode {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+    //  margin-top:58px;
+
+    .sb-input-row {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .logo-img{
+        width: 100px;
+        height: 100px;
+        padding: 30px 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .a-text{
+        padding: 4px 2px;
+    }
+
+    .sb-input-clear {
+        width: 88%;
+        padding: 18px 15px;
+        color: @text-color;
+        margin-left: 2%;
+        font-size: 14px;
+    }
+
+    .sb-input-code {
+        width: 50%;
+    }
+    .get-code {
+        width: 36%;
+        padding: 10px 15px;
+        border: none;
+        background: @blue-bg;
+        color: @white-color;
+    }
+
+    .fot-pass {
+        width: 90%;
+        margin: 0 auto;
+        text-align: right;
+
+        .fot-pass-text {
+            padding: 5px;
+        }
+    }
+    
+    .sb-button-row {
+        width: 90%;
+        margin: 15px auto;
+    }
+    
+    .xy-text{
+        color: @blue-bg;
+    }
+    
+     .icon-size3{
+         display: inline-block;
+         width: 8%;
+         font-size: 24px;
+         vertical-align: middle;
+     }
+
+}
+
 .mode-bg-white{
     background: @white-color;
 }
@@ -160,5 +280,20 @@ a {
 }
 
 .red-bg{
-    background: ;
+    background:@brand-red ;
+}
+
+.orange-bg{
+    background:@orange-color;//橙色
+
+}
+.blue-bg{
+    background:@blue-color ;
+}
+.yellow-bg{
+    background:@yellow-color;
+}
+
+.text-right{
+    float: right;
 }
