@@ -1,0 +1,251 @@
+//主系颜色
+
+@title-color:#323232;//标题颜色
+@text-color:#595757;//正文颜色
+@input-normol:#dcdcdc;//输入文本框默认颜色
+@white-color:#ffffff;
+
+@orange-color:#f27638;//橙色
+@yellow-color:#FF8C00;//黄色
+@brand-red:#E7290F;//红色
+@violet-color:#c37ef8;//紫色
+@green-color:#8cb83f;//绿色
+@dark-blue-color:#6a3ce0;//深蓝
+@brown-color:#baa202;//棕色
+//背景色
+@white-bg:#ffffff;
+@blue-bg:#197fee;
+@grey-bg:#f3f3f3;
+
+
+
+//字体大小
+@font-base:14px;
+@font-size-s12:12px;
+@font-size-s16:16px;
+@font-size-s18:18px;
+@font-size-s20:20px;
+@font-size-s24:24px;
+@font-size-s28:28px;
+@font-size-s32:32px;
+
+
+//边框
+@border-grey:#dedede;
+
+.border-radius(@radius:5px){
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.btn(@width:100%,@bg:@blue-bg,@color:@white-color,@padT:10px,@padL:15px){
+    display: inline-block;
+    width: @width;
+    padding: @padT @padL;
+    background: @bg;
+    color: @color;
+    text-align: center;
+    .border-radius(3px);
+}
+
+.clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+    content: " "; // 1
+    display: table; // 2
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+    }
+    &:after {
+    clear: both;
+    }
+}
+
+
+
+//栅格系统
+.za-row {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  .clearfix();
+}
+.za-col-1,
+.za-col-2,
+.za-col-3,
+.za-col-4,
+.za-col-5,
+.za-col-6,
+.za-col-7,
+.za-col-8,
+.za-col-9,
+.za-col-10,
+.za-col-11,
+.za-col-12,
+.za-col-13,
+.za-col-14,
+.za-col-15,
+.za-col-16,
+.za-col-17,
+.za-col-18,
+.za-col-19,
+.za-col-20,
+.za-col-21,
+.za-col-22,
+.za-col-23,
+.za-col-24 {
+  position: relative;
+  float: left;
+  display: inline;
+  min-height: 1%;
+  /*margin-left: 0.4%;
+    margin-right: 0.4%;*/
+}
+.za-col-1 {
+  width: percentage(1/24);
+}
+.za-col-2 {
+  width: percentage(2/24);
+}
+.za-col-3 {
+  width: percentage(3/24);
+}
+.za-col-4 {
+  width: percentage(4/24);
+}
+.za-col-5 {
+  width: percentage(5/24);
+}
+.za-col-6 {
+  width: percentage(6/24);
+}
+.za-col-7 {
+  width: percentage(7/24);
+}
+.za-col-8 {
+  width: percentage(8/24);
+}
+.za-col-9 {
+  width: percentage(9/24);
+}
+.za-col-10 {
+  width: percentage(10/24);
+}
+.za-col-11 {
+  width: percentage(11/24);
+}
+.za-col-12 {
+  width: percentage(12/24);
+}
+.za-col-13 {
+  width: percentage(13/24);
+}
+.za-col-14 {
+  width: percentage(14/24);
+}
+.za-col-15 {
+  width: percentage(15/24);
+}
+.za-col-16 {
+  width: percentage(16/24);
+}
+.za-col-17 {
+  width: percentage(17/24);
+}
+.za-col-18 {
+  width: percentage(18/24);
+}
+.za-col-19 {
+  width: percentage(19/24);
+}
+.za-col-20 {
+  width: percentage(20/24);
+}
+.za-col-21 {
+  width: percentage(21/24);
+}
+.za-col-22 {
+  width: percentage(22/24);
+}
+.za-col-23 {
+  width: percentage(23/24);
+}
+.za-col-24 {
+  width: percentage(24/24);
+}
+.za-offset-1 {
+  margin-left: percentage(1/24);
+}
+.za-offset-2 {
+  margin-left: percentage(2/24);
+}
+.za-offset-3 {
+  margin-left: percentage(3/24);
+}
+.za-offset-4 {
+  margin-left: percentage(4/24);
+}
+.za-offset-5 {
+  margin-left: percentage(5/24);
+}
+.za-offset-6 {
+  margin-left: percentage(6/24);
+}
+.za-offset-7 {
+  margin-left: percentage(7/24);
+}
+.za-offset-8 {
+  margin-left: percentage(8/24);
+}
+.za-offset-9 {
+  margin-left: percentage(9/24);
+}
+.za-offset-10 {
+  margin-left: percentage(10/24);
+}
+.za-offset-11 {
+  margin-left: percentage(11/24);
+}
+.za-offset-12 {
+  margin-left: percentage(12/24);
+}
+.za-offset-13 {
+  margin-left: percentage(13/24);
+}
+.za-offset-14 {
+  margin-left: percentage(14/24);
+}
+.za-offset-15 {
+  margin-left:percentage(15/24);
+}
+.za-offset-16 {
+  margin-left: percentage(16/24);
+}
+.za-offset-17 {
+  margin-left: percentage(17/24);
+}
+.za-offset-18 {
+  margin-left: percentage(18/24);
+}
+.za-offset-19 {
+  margin-left: percentage(19/24);
+}
+.za-offset-20 {
+  margin-left: percentage(20/24);
+}
+.za-offset-21 {
+  margin-left: percentage(21/24);
+}
+.za-offset-22 {
+  margin-left: percentage(22/24);
+}
+.za-offset-23 {
+  margin-left: percentage(23/24);
+}
+.za-offset-24 {
+  margin-left: percentage(24/24);
+}

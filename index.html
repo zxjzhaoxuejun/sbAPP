@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+	</head>
+
+	<body class="body-bg">
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
+			<h1 class="mui-title">首页</h1>
+		</header>
+
+		<!--内容-->
+		<div class="sb-main margin-head">
+			<!--轮播图-->
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/banner2_pc.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/banner2_pc.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/banner3_pc.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/banner2_pc.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/banner3_pc.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<!--主模块入口-->
+			<div class="sb-menu">
+				<div class="za-row">
+					<div class="sb-menu-viwe za-col-11 orange-bg">
+						<a href="buy_social.html" class="sb-menu-link">
+							<span class="mui-icon-extra mui-icon-extra-card"></span>
+							<div class="mui-media-body">购买社保</div>
+						</a>
+					</div>
+					<div class="sb-menu-viwe za-col-11 dark-blue-bg">
+						<a href="assets_details.html" class="sb-menu-link">
+							<span class="mui-icon-extra mui-icon-extra-gold"></span>
+							<div class="mui-media-body">财税服务</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="za-row">
+					<div class="sb-menu-viwe za-col-5 green-bg">
+						<a href="social_serve.html" class="sb-menu-link">
+							<span class="mui-icon-extra mui-icon-extra-hotel"></span>
+							<div class="mui-media-body">社保托管</div>
+						</a>
+					</div>
+					<div class="sb-menu-viwe za-col-5 brown-bg">
+						<a href="copartner.html" class="sb-menu-link">
+							<span class="mui-icon-extra mui-icon-extra-addpeople"></span>
+							<div class="mui-media-body">成为合伙人</div>
+						</a>
+					</div>
+					<div class="sb-menu-viwe za-col-11 violet-bg">
+						<a href="social_calc.html" class="sb-menu-link">
+							<span class="mui-icon-extra mui-icon-extra-calc"></span>
+							<div class="mui-media-body">社保计算器</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!--热门产品-->
+			<div class="sb-model">
+				<div class="sb-title-text">
+					<span class="sb-title-con">热门产品</span>
+					<a class="sb-title-icon" href="buy_social.html">查看更多</a>
+				</div>
+
+				<!--产品列表-->
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-12">
+						<a href="personal_details.html">
+							<img class="mui-media-object" src="images/pro_3.jpg">
+							<div class="sb-pro-text">
+								<div class="sb-pro-title">社保48号48元/人/月</div>
+								<div class="red-btn-icon">
+									<span class="sb-left-con">季付</span>
+									<span class="sb-right-con color-1">128元/季</span>
+								</div>
+								<div class="blue-btn-icon">
+									<span class="sb-left-con">半年付</span>
+									<span class="sb-right-con color-2">248元/半年</span>
+								</div>
+							</div>
+							<span class="tag-icon"></span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-12">
+						<a href="boss_details.html">
+							<img class="mui-media-object" src="images/qy_pro_2.jpg">
+							<div class="sb-pro-text">
+								<div class="sb-pro-title">社保48号50元/人/月</div>
+								<!--<div class="red-btn-icon">
+									<span class="sb-left-con">月付</span>
+									<span class="sb-right-con color-1">48元/月</span>
+								</div>-->
+							</div>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<!--最新资讯-->
+			<div class="sb-model">
+				<div class="sb-title-text">
+					<span class="sb-title-con">最新资讯</span>
+					<a class="sb-title-icon" href="news.html">查看更多</a>
+				</div>
+
+				<!--资讯列表-->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="news_details.html">
+							<span class="sb-news-title">关于深圳市社保参保人更换金融社保卡的公告</span>
+							<i class="sb-news-time">2017-07-10</i>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="news_details.html">
+							<span class="sb-news-title">深圳市在职人员社会保险缴费比例及缴费基数表</span>
+							<i class="sb-news-time">2017-07-10</i>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="news_details.html">
+							<span class="sb-news-title">养老金领取资格“刷脸”在线认证正式上线</span>
+							<i class="sb-news-time">2017-07-10</i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!--底部-->
+		<footer class="mui-bar mui-bar-tab" style="margin-top: 50px;">
+			<a class="mui-tab-item mui-active" href="index.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="buy_social.html">
+				<span class="mui-icon-extra mui-icon-extra-card foot-icon"></span>
+				<span class="mui-tab-label">社保</span>
+			</a>
+			<a class="mui-tab-item" href="assets_details.html">
+				<span class="mui-icon-extra mui-icon-extra-gold foot-icon"></span>
+				<span class="mui-tab-label">财税</span>
+			</a>
+			<a class="mui-tab-item" href="copartner.html">
+				<span class="mui-icon-extra mui-icon-extra-addpeople foot-icon"></span>
+				<span class="mui-tab-label">合伙人</span>
+			</a>
+			<a class="mui-tab-item" href="user.html">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</footer>
+
+      <script src="js/main.js"></script>
+	</body>
+
+</html>
