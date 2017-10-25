@@ -8,6 +8,7 @@
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/mui.min.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/app-font.css" />
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 	</head>
 
@@ -16,6 +17,7 @@
 		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
 			<h1 class="mui-title">首页</h1>
+			<a class="mui-icon mui-icon-right-nav mui-pull-right mui-icon-phone sb-back-icon"></a>
 		</header>
 
 		<!--内容-->
@@ -61,87 +63,49 @@
 				</div>
 			</div>
 
-			<!--主模块入口-->
-			<div class="sb-menu">
-				<div class="za-row">
-					<div class="sb-menu-viwe za-col-11 orange-bg">
-						<a href="buy_social.html" class="sb-menu-link">
-							<span class="mui-icon-extra mui-icon-extra-card"></span>
-							<div class="mui-media-body">购买社保</div>
-						</a>
-					</div>
-					<div class="sb-menu-viwe za-col-11 dark-blue-bg">
-						<a href="assets_details.html" class="sb-menu-link">
-							<span class="mui-icon-extra mui-icon-extra-gold"></span>
-							<div class="mui-media-body">财税服务</div>
-						</a>
-					</div>
+			
+			<!--tag贴签模块-->
+			<div class="sb-model mode-bg-white">
+				<div class="za-row row-padding">
+				    <div class="za-col-6">
+				    	<a href="#">
+				    		<div class="img-icon red">
+				    			<span class="app-icon app-trophy white-color icon-style"></span>
+				    		</div>
+				    		<div class="img-text">TOP10</div>
+				    	</a>
+				    </div>
+				    
+				    <div class="za-col-6">
+				    	<a href="#">
+				    		<div class="img-icon orange">
+				    			<span class="app-icon app-coin-yen white-color icon-style"></span>
+				    		</div>
+				    		<div class="img-text">收入</div>
+				    	</a>
+				    </div>
+				    
+				    <div class="za-col-6">
+				    	<a href="#">
+				    		<div class="img-icon blue">
+				    			<span class="app-icon app-calculator white-color icon-style"></span>
+				    		</div>
+				    		<div class="img-text">社保计算</div>
+				    	</a>
+				    </div>
+				    
+				    <div class="za-col-6">
+				    	<a href="#">
+				    		<div class="img-icon yellow">
+				    			<span class="app-icon app-home white-color icon-style"></span>
+				    		</div>
+				    		<div class="img-text">公积金计算</div>
+				    	</a>
+				    </div>
 				</div>
-
-				<div class="za-row">
-					<div class="sb-menu-viwe za-col-5 green-bg">
-						<a href="social_serve.html" class="sb-menu-link">
-							<span class="mui-icon-extra mui-icon-extra-hotel"></span>
-							<div class="mui-media-body">社保托管</div>
-						</a>
-					</div>
-					<div class="sb-menu-viwe za-col-5 brown-bg">
-						<a href="copartner.html" class="sb-menu-link">
-							<span class="mui-icon-extra mui-icon-extra-addpeople"></span>
-							<div class="mui-media-body">成为合伙人</div>
-						</a>
-					</div>
-					<div class="sb-menu-viwe za-col-11 violet-bg">
-						<a href="social_calc.html" class="sb-menu-link">
-							<span class="mui-icon-extra mui-icon-extra-calc"></span>
-							<div class="mui-media-body">社保计算器</div>
-						</a>
-					</div>
-				</div>
+				
 			</div>
-
-			<!--热门产品-->
-			<div class="sb-model">
-				<div class="sb-title-text">
-					<span class="sb-title-con">热门产品</span>
-					<a class="sb-title-icon" href="buy_social.html">查看更多</a>
-				</div>
-
-				<!--产品列表-->
-				<ul class="mui-table-view mui-grid-view">
-					<li class="mui-table-view-cell mui-media mui-col-xs-12">
-						<a href="personal_details.html">
-							<img class="mui-media-object" src="images/pro_3.jpg">
-							<div class="sb-pro-text">
-								<div class="sb-pro-title">社保48号48元/人/月</div>
-								<div class="red-btn-icon">
-									<span class="sb-left-con">季付</span>
-									<span class="sb-right-con color-1">128元/季</span>
-								</div>
-								<div class="blue-btn-icon">
-									<span class="sb-left-con">半年付</span>
-									<span class="sb-right-con color-2">248元/半年</span>
-								</div>
-							</div>
-							<span class="tag-icon"></span>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-12">
-						<a href="boss_details.html">
-							<img class="mui-media-object" src="images/qy_pro_2.jpg">
-							<div class="sb-pro-text">
-								<div class="sb-pro-title">社保48号50元/人/月</div>
-								<!--<div class="red-btn-icon">
-									<span class="sb-left-con">月付</span>
-									<span class="sb-right-con color-1">48元/月</span>
-								</div>-->
-							</div>
-						</a>
-					</li>
-				</ul>
-
-			</div>
-
+			
 			<!--最新资讯-->
 			<div class="sb-model">
 				<div class="sb-title-text">
@@ -181,16 +145,17 @@
 				<span class="mui-tab-label">首页</span>
 			</a>
 			<a class="mui-tab-item" href="buy_social.html">
-				<span class="mui-icon-extra mui-icon-extra-card foot-icon"></span>
-				<span class="mui-tab-label">社保</span>
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">消息</span>
 			</a>
 			<a class="mui-tab-item" href="assets_details.html">
-				<span class="mui-icon-extra mui-icon-extra-gold foot-icon"></span>
-				<span class="mui-tab-label">财税</span>
+				<span class="qrcode-mode">
+					<span class="app-icon app-qrcode qrcode-color"></span>
+				</span>
 			</a>
 			<a class="mui-tab-item" href="copartner.html">
-				<span class="mui-icon-extra mui-icon-extra-addpeople foot-icon"></span>
-				<span class="mui-tab-label">合伙人</span>
+				<span class="mui-icon mui-icon-chatbubble"></span>
+				<span class="mui-tab-label">提醒</span>
 			</a>
 			<a class="mui-tab-item" href="user.html">
 				<span class="mui-icon mui-icon-person"></span>
