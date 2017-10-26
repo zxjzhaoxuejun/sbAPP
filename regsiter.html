@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>注册</title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/app-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+	</head>
+	<body style="background: #fff;">
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		
+		<div class="form-mode margin-head">
+			<div class="logo-img">
+				<img src="images/logo2.png" alt="logo" class="app-logo-img">
+			</div>
+			<!--个人注册信息-->
+			<form class="sb-input-group" id="personForm">
+				<div class="sb-input-row">
+					<span class="app-icon app-user icon-size3"></span>
+					<input type="number" class="sb-input-clear" placeholder="输入用户名">
+				</div>
+				
+				<div class="sb-input-row">
+					<span class="app-icon app-mobile2 icon-size3"></span>
+					<input type="number" class="sb-input-clear" placeholder="请输入手机号">
+				</div>
+
+				<div class="sb-input-row">
+					<span class="app-icon app-qrcode icon-size3"></span>
+					<input type="text" class="sb-input-clear sb-input-code" placeholder="输入验证码">
+					<button class="get-code">获取验证码</button>
+				</div>
+
+				<div class="sb-input-row">
+					<span class="app-icon app-key icon-size3"></span>
+					<input type="text" class="sb-input-clear" placeholder="请设置6-20位数字与字母组合密码">
+				</div>
+
+				<div class="sb-input-row">
+					<span class="app-icon app-qrcode icon-size3"></span>
+					<input type="text" class="sb-input-clear" placeholder="请输入推荐码（选填）">
+				</div>
+				
+                <div class="sb-input-row">
+					<label><input type="checkbox" class="sb-checkbox-clear">
+					我已经阅读并同意****在线</label>
+					<a href="#" class="xy-text">《注册协议》</a>
+				</div>
+				
+				<div class="sb-button-row">
+					<a href="#" class="sb-btn">立即注册</a>
+				</div>
+				<div class="sb-button-row">
+					<a href="login.html" class="sb-btn sb-btn-primary">已有账户，<span>去登录</span></a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

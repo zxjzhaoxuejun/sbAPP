@@ -49,6 +49,11 @@ a {
 .margin-head {
     margin: 43px 0;
 }
+
+.margin-input-head{
+    margin-top: 50px!important;
+}
+
 .margin-big-head {
     margin-top: 58px;
 }
@@ -196,11 +201,166 @@ a {
     color: @text-color;
 }
 
+
+//消息
+
+.news-mode{
+    
+    .no-news{
+        padding-top:100px;
+        text-align: center;
+    }
+    
+}
+
+
+//我的
+
+.user-main{
+    
+    .user-list-text{
+        font-size: 15px;
+        margin-left: 8px;
+    }
+    
+    .empty-line {
+        height: 10px;
+        background: @grey-bg;
+    }
+    
+    .kf-tel{
+        float: right;
+        color: @bg6;
+    }
+    
+    .user-icon{
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background: @blue-bg;
+        vertical-align: middle;
+        text-align: center;
+        color: @white-color;
+        font-size: @font-size-s16;
+        line-height: 28px;
+        .border-radius(50%);
+    }
+    
+    .user-title{
+        background: @white-color;
+        padding: 20px 0;
+        overflow: hidden;
+    }
+    
+    .user-img{
+        position: relative;
+        .clearfix();
+        width: 70px;
+        max-width: 30%;
+        height: 70px;
+        float: left;
+        border: 1px #f7f7f7 solid;
+        background: #f7f7f7;
+        text-align: center;
+        margin-left: 5%;
+        .border-radius(50%);
+    }
+    
+    .tag-name{
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+        display: inline-block;
+        width: 66px;
+        text-align: center;
+        color: @white-color;
+        font-size: @font-size-s12;
+        background: @bg1;
+        border-radius: 0 0 25px 25px;
+    }
+    
+    .fx-type{
+        padding: 2px 6px;
+        background: @bg9;
+        font-size: @font-size-s12;
+        margin-left: 10px;
+        color: @white-color;
+        .border-radius(5px);
+    }
+    
+    .user-img-items{
+        max-width: 100%;
+    }
+    
+    .user-name-mode{
+        .clearfix();
+        width: 40%;
+        float: left;
+    }
+    
+    .user-name{
+        font-size: @font-size-s16;
+        color: @title-color;
+        padding: 8px;
+    }
+    
+    .user-tel{
+        padding: 0 8px;
+        font-size: @font-size-s16;
+        color: @title-color;
+    }
+    .user-qrcode{
+        width: 25%;
+        height: 35px;
+        background: @bg10;
+        float: right;
+        line-height: 35px;
+        text-align: center;
+        border-radius:20px 0 0 20px;
+    }
+    
+    .bg1{
+        background: @bg1;
+    }
+    
+    .bg2{
+        background: @bg2;
+    }
+    
+    .bg3{
+        background: @bg3;
+    }
+    
+    .bg4{
+        background: @bg4;
+    }
+    
+    .bg5{
+        background: @bg5;
+    }
+    
+    .bg6{
+        background: @bg6;
+    }
+    
+    .bg7{
+        background: @bg7;
+    }
+    
+    .bg8{
+        background: @bg8;
+    }
+    
+    .bg9{
+        background: @bg9;
+    }
+}
+
 //登录
 .form-mode {
     width: 100%;
     height: 100%;
-    margin-bottom: 50px;
+    margin-top: 70px;
     //  margin-top:58px;
 
     .sb-input-row {
@@ -208,12 +368,54 @@ a {
         margin: 0 auto;
     }
     
-    .logo-img{
-        width: 100px;
-        height: 100px;
-        padding: 30px 0;
+    .app-input-row{
+        width: 96%;
         margin: 0 auto;
+        border-bottom: 1px @border-grey solid;
+    }
+    
+    .app-input-clear{
+        width: 68%;
+        border: none;
+        font-size: @font-base;
+        color: @text-color;
+        margin-bottom: 0!important;
+    }
+    
+    .two-input{
+        width: 33%!important;
+    }
+    
+    .button-input{
+        background: @bg6;
+        border: 1px @bg6 solid;
+        margin: 4px 0;
+        color: @white-color;
+    }
+    
+    .input-key{
+        display: inline-block;
+        width: 28%;
+        font-size: @font-size-s16;
+        color: @title-color;
+        text-align: right;
+        vertical-align: middle;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
+    
+    
+    .logo-img{
+        width: 80px;
+        height: 80px;
+        margin: 20px auto;
         text-align: center;
+    }
+    
+    .app-logo-img{
+        width: 100%;
     }
     
     .a-text{
@@ -296,4 +498,25 @@ a {
 
 .text-right{
     float: right;
+}
+
+.black-bg{
+    background: #797979;
+}
+
+.ew-code{
+    width: 70%;
+    height: auto;
+    margin: 30% auto 0 auto;
+    overflow: hidden;
+    background: @white-color;
+    border-radius: 5px;
+    
+    .wei-code{
+        width: 150px;
+        max-width: 80%;
+        height: 150px;
+        margin: 10px auto;
+        text-align: center;
+    }
 }
