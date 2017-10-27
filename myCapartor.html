@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的合伙人</title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/echarts.common.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/app-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+	</head>
+
+	<body class="body-bg">
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
+			<h1 class="mui-title">我的合伙人</h1>
+			<!--<a class="mui-icon mui-icon-right-nav mui-pull-right mui-icon-phone sb-back-icon"></a>-->
+		</header>
+
+		<!--内容-->
+		<div class="user-main margin-head">
+			<!--列表-->
+			<ul class="mui-table-view" style="clear: both;">
+				
+				<li class="mui-table-view-cell">
+					<span class="income-title-text">合伙人总数</span><b class="kf-tel">20</b>
+				</li>
+				<li class="mui-table-view-cell">
+					<!--数据饼状图-->
+					<div id="myIncome" style="height: 150px;"></div>
+					<div class="income-data">
+						<div class="y-data">
+							<span class="f-pie bg11"></span>
+							<span class="income-text">一级合伙人</span>
+							<span id="capartor1"></span>
+						</div>
+						<div class="f-data">
+							<span class="f-pie bg12"></span>
+							<span class="income-text">二级合伙人</span>
+							<span id="capartor2"></span>
+						</div>
+						<div class="f-data">
+							<span class="f-pie bg13"></span>
+							<span class="income-text">三级合伙人</span>
+							<span id="capartor3"></span>
+						</div>
+						<div class="d-data">
+							<span class="income-text">更新时间:</span>
+							<span class="update-time"></span>
+						</div>
+					</div>
+
+				</li>
+
+				<!--空格-->
+				<li class="empty-line"></li>
+				<!--空格-->
+				<li class="mui-table-view-cell">
+					<span class="income-title-text">合伙人明细</span>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="oneUser.html">
+						<span class="user-icon bg5 app-icon app-user-check"></span>
+						<span class="user-list-text">一级合伙人</span>
+						<b class="kf-tel">10</b>
+					</a>
+				</li>
+
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="twoUser.html">
+						<span class="user-icon bg7 app-icon app-user-check"></span>
+						<span class="user-list-text">二级合伙人</span>
+						<b class="kf-tel">6</b>
+					</a>
+				</li>
+				
+				<li class="mui-table-view-cell">
+					<!--<a class="mui-navigate-right">-->
+						<span class="user-icon bg9 app-icon app-user-check"></span>
+						<span class="user-list-text">三级合伙人</span>
+						<b class="kf-tel">4</b>
+					<!--</a>-->
+				</li>
+
+				
+
+			</ul>
+
+		</div>
+
+		<!--底部-->
+		<footer class="mui-bar mui-bar-tab" style="margin-top: 50px;">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="news.html">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="/">
+				<span class="qrcode-mode">
+					<span class="app-icon app-qrcode qrcode-color"></span>
+				</span>
+			</a>
+			<a class="mui-tab-item" href="remind.html">
+				<span class="mui-icon mui-icon-chatbubble"></span>
+				<span class="mui-tab-label">提醒</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="login.html">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</footer>
+
+		<script src="js/main.js"></script>
+
+		<script>
+			var capartorData=[ //数据
+						{ "value": 10, "name": "一级合伙人" },
+						{ "value": 6, "name": "二级合伙人" },
+						{ "value": 4, "name": "三级合伙人" },
+					];
+			var myChart = echarts.init(document.getElementById('myIncome'));
+			var option = {
+				title: {
+					text: ''
+				},
+				tooltip: {
+					//  	formatter: "{b}\n{c} ({d}%)",
+				},
+				series: [{
+					name: '我的合伙人',
+					type: 'pie',
+					radius: ['40%', '70%'], //圆弧的半径大小
+					center: ['50%', '50%'], //圆环的位置
+					avoidLabelOverlap: true,
+					label: {
+						normal: {
+							show: true,
+							position: 'left',
+							formatter: "{c}人\n ({d}%)",
+						},
+						emphasis: {
+							textStyle: {
+								fontSize: '12',
+								fontWeight: 'bold',
+							}
+						}
+					},
+					labelLine: {
+						normal: {
+							show: true
+						}
+					},
+					data: capartorData,
+					itemStyle: {
+						//通常情况下：
+						normal: {
+							show: true,
+							　　　　　　　　　　　　 //每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+							color: function(params) {
+								var colorList = ['rgb(250,166,32)', 'rgb(252,83,32)', 'rgb(200,83,32)'];
+								return colorList[params.dataIndex];
+							}
+						},
+					},
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+			
+			//一级
+			$('#capartor1').text(capartorData[0].value);
+			//二级
+			$('#capartor2').text(capartorData[1].value);
+			//级
+			$('#capartor3').text(capartorData[2].value);
+			//更新时间
+			var nowTime=new Date();
+			var myTime=nowTime.getFullYear()+'-'+(nowTime.getMonth()+1)+'-'+nowTime.getDate()+' '+nowTime.getHours()+':'+nowTime.getMinutes();  
+			$('.update-time').text(myTime);
+			
+		</script>
+
+	</body>
+
+</html>

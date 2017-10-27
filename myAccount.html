@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的账户</title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/app-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+	</head>
+
+	<body class="body-bg">
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
+			<h1 class="mui-title">我的账户</h1>
+			<!--<a class="mui-icon mui-icon-right-nav mui-pull-right mui-icon-phone sb-back-icon"></a>-->
+		</header>
+
+		<!--内容-->
+		<div class="user-main margin-head">
+			
+			<div class="account">
+				<div class="account-num">
+					<h3>账户余额（元）</h3>
+					<h2 class="account-count">8999</h2>
+				</div>
+				<div class="account-btn l-float">
+					<span class="account-btn-text">可用余额</span>
+					<span class="account-money">0</span>
+				</div>
+				<div class="account-btn r-float">
+					<span class="account-btn-text">冻结余额</span>
+					<span class="account-money">0</span>
+				</div>
+			</div>
+			
+			<!--列表-->
+			<ul class="mui-table-view" style="clear: both;">
+				<!--空格-->
+				<li class="empty-line"></li>
+				<!--空格-->
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="user-icon bg1 app-icon app-coin-yen"></span>
+						<span class="user-list-text">账户明细</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="user-icon bg9 app-icon app-coin-yen"></span>
+						<span class="user-list-text">提现申请</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="cards.html">
+						<span class="user-icon bg8 app-icon app-credit-card"></span>
+						<span class="user-list-text">银行卡管理</span>
+					</a>
+				</li>
+
+			</ul>
+
+		</div>
+
+		<!--底部-->
+		<footer class="mui-bar mui-bar-tab" style="margin-top: 50px;">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="news.html">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="/">
+				<span class="qrcode-mode">
+					<span class="app-icon app-qrcode qrcode-color"></span>
+				</span>
+			</a>
+			<a class="mui-tab-item" href="remind.html">
+				<span class="mui-icon mui-icon-chatbubble"></span>
+				<span class="mui-tab-label">提醒</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="login.html">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</footer>
+
+      <script src="js/main.js"></script>
+	</body>
+
+</html>
