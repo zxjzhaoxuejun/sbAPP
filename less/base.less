@@ -38,6 +38,28 @@ a {
     }
 }
 
+.head-nav-text{
+    line-height: 44px!important;
+}
+
+.title-nav{
+    width: 50%;
+    height: 28px;
+    line-height: 28px;
+    margin: 8px auto;
+    background: @bg8;
+    font-size: @font-size-s16;
+    border-radius: 5px;
+}
+
+.clients-active{
+    display: inline-block;
+    width: 50%;
+    background: @white-color;
+    color: @title-color!important;
+    border-radius: 5px 0 0 5px;
+}
+
 .mui-slider-indicator .mui-active.mui-indicator {
     background: @white-color;
 }
@@ -47,7 +69,7 @@ a {
 }
 
 .margin-head {
-    margin: 43px 0;
+    margin: 44px 0;
 }
 
 .margin-input-head{
@@ -217,6 +239,8 @@ a {
 //我的
 
 .user-main{
+    height: auto;
+    overflow: hidden;
     
     .user-list-text{
         font-size: 15px;
@@ -230,7 +254,8 @@ a {
     
     .kf-tel{
         float: right;
-        color: @bg6;
+        color: @bg9;
+        margin-right: 20px;
     }
     
     .user-icon{
@@ -354,6 +379,151 @@ a {
     .bg9{
         background: @bg9;
     }
+    
+    .bg11{
+        background: @bg11;
+    }
+    
+    .bg12{
+        background: @bg12;
+    }
+    
+    .bg13{
+        background: @bg13;
+    }
+    
+    .income-title-text{
+        font-size: @font-size-s18;
+    }
+    
+    .income-text{
+        font-size: @font-base;
+        color: @title-color;
+        margin-right: 10px;
+    }
+    
+    .f-pie{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
+    }
+    .f-data{
+        margin: 6px 0;
+    }
+    
+    .account{
+        padding-top: 15px;
+        background: @blue-color;
+        overflow: hidden;
+        
+        h3{
+            color: #ccc;
+            font-size: @font-size-s18;
+        }
+        
+        .account-count{
+            color: @white-color;
+            margin: 15px 0;
+        }
+    }
+    
+    .account-num{
+        padding-left:15px;
+    }
+    
+    .account-btn{
+        width:45%;
+        height: 40px;
+        
+        background: @bg7;
+        color: #ccc;
+        line-height: 40px;
+        padding: 0 15px;
+    }
+    
+    .r-float{
+        float: right;
+    }
+    
+    .l-float{
+        float: left;
+    }
+    
+    .account-money{
+        color: @white-color;
+        margin-left: 15px;
+    }
+    
+    .month-income{
+        height: 70px;
+        padding:10px 15px;
+        background: @bg6;
+        font-size: @font-size-s16;
+        color: @white-color;
+        overflow: hidden;
+    }
+    
+    .month-num{
+        padding: 0 4px;
+        background: @grey-bg;
+        margin-left: 10px;
+        color: @text-color;
+        .border-radius(5px);
+    }
+    
+    .month-money{
+        font-size: @font-size-s18;
+        margin-top: 10px;
+    }
+    
+    .month-user{
+        padding: 10px 15px;
+        background: @white-color;
+    }
+    
+    .m-title{
+        margin-right: 10px;
+    }
+    
+    .months{
+        margin-bottom: 15px;
+    }
+    
+    
+    .one-users{
+        width: 94%;
+        margin: 15px auto;
+        background: @white-color;
+        .border-radius(5px);
+    }
+    
+    .one-users-name{
+        padding:10px 15px;
+        background: @bg6;
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .bz-text{
+        width: 30%;
+        height: 25px;
+        font-size: @font-base;
+        float: right;
+    }
+    
+    .one-u-tel{
+        color: @white-color;
+    }
+    
+    .one-users-info{
+        padding: 10px 15px;
+        border-bottom: 1px @border-grey solid;
+    }
+    
+    .one-users-items{
+        padding: 10px 15px;
+    }
+    
 }
 
 //登录
@@ -465,6 +635,15 @@ a {
          width: 8%;
          font-size: 24px;
          vertical-align: middle;
+     }
+     
+     .feed-text{
+         margin-top: 10px;
+         
+         textarea{
+             height: 200px;
+             font-size: @font-base;
+         }
      }
 
 }

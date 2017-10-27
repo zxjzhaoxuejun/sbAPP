@@ -219,6 +219,25 @@ a {
 .sb-title-bg .sb-back-icon {
   color: #ffffff;
 }
+.head-nav-text {
+  line-height: 44px!important;
+}
+.title-nav {
+  width: 50%;
+  height: 28px;
+  line-height: 28px;
+  margin: 8px auto;
+  background: #8688eb;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.clients-active {
+  display: inline-block;
+  width: 50%;
+  background: #ffffff;
+  color: #323232 !important;
+  border-radius: 5px 0 0 5px;
+}
 .mui-slider-indicator .mui-active.mui-indicator {
   background: #ffffff;
 }
@@ -226,7 +245,7 @@ a {
   bottom: 4px;
 }
 .margin-head {
-  margin: 43px 0;
+  margin: 44px 0;
 }
 .margin-input-head {
   margin-top: 50px!important;
@@ -363,6 +382,10 @@ a {
   padding-top: 100px;
   text-align: center;
 }
+.user-main {
+  height: auto;
+  overflow: hidden;
+}
 .user-main .user-list-text {
   font-size: 15px;
   margin-left: 8px;
@@ -373,7 +396,8 @@ a {
 }
 .user-main .kf-tel {
   float: right;
-  color: #6fbded;
+  color: #e2545e;
+  margin-right: 20px;
 }
 .user-main .user-icon {
   display: inline-block;
@@ -503,6 +527,126 @@ a {
 .user-main .bg9 {
   background: #e2545e;
 }
+.user-main .bg11 {
+  background: #faa620;
+}
+.user-main .bg12 {
+  background: #fc5320;
+}
+.user-main .bg13 {
+  background: #c85320;
+}
+.user-main .income-title-text {
+  font-size: 18px;
+}
+.user-main .income-text {
+  font-size: 14px;
+  color: #323232;
+  margin-right: 10px;
+}
+.user-main .f-pie {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.user-main .f-data {
+  margin: 6px 0;
+}
+.user-main .account {
+  padding-top: 15px;
+  background: #007aff;
+  overflow: hidden;
+}
+.user-main .account h3 {
+  color: #ccc;
+  font-size: 18px;
+}
+.user-main .account .account-count {
+  color: #ffffff;
+  margin: 15px 0;
+}
+.user-main .account-num {
+  padding-left: 15px;
+}
+.user-main .account-btn {
+  width: 45%;
+  height: 40px;
+  background: #5e88eb;
+  color: #ccc;
+  line-height: 40px;
+  padding: 0 15px;
+}
+.user-main .r-float {
+  float: right;
+}
+.user-main .l-float {
+  float: left;
+}
+.user-main .account-money {
+  color: #ffffff;
+  margin-left: 15px;
+}
+.user-main .month-income {
+  height: 70px;
+  padding: 10px 15px;
+  background: #6fbded;
+  font-size: 16px;
+  color: #ffffff;
+  overflow: hidden;
+}
+.user-main .month-num {
+  padding: 0 4px;
+  background: #f3f3f3;
+  margin-left: 10px;
+  color: #595757;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.user-main .month-money {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.user-main .month-user {
+  padding: 10px 15px;
+  background: #ffffff;
+}
+.user-main .m-title {
+  margin-right: 10px;
+}
+.user-main .months {
+  margin-bottom: 15px;
+}
+.user-main .one-users {
+  width: 94%;
+  margin: 15px auto;
+  background: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.user-main .one-users-name {
+  padding: 10px 15px;
+  background: #6fbded;
+  border-radius: 5px 5px 0 0;
+}
+.user-main .bz-text {
+  width: 30%;
+  height: 25px;
+  font-size: 14px;
+  float: right;
+}
+.user-main .one-u-tel {
+  color: #ffffff;
+}
+.user-main .one-users-info {
+  padding: 10px 15px;
+  border-bottom: 1px #dedede solid;
+}
+.user-main .one-users-items {
+  padding: 10px 15px;
+}
 .form-mode {
   width: 100%;
   height: 100%;
@@ -594,6 +738,13 @@ a {
   width: 8%;
   font-size: 24px;
   vertical-align: middle;
+}
+.form-mode .feed-text {
+  margin-top: 10px;
+}
+.form-mode .feed-text textarea {
+  height: 200px;
+  font-size: 14px;
 }
 .mode-bg-white {
   background: #ffffff;
