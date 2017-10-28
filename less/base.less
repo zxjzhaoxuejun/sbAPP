@@ -23,6 +23,10 @@ a {
     color: @text-color;
 }
 
+img{
+    width: 100%;
+}
+
 .body-bg {
     background: @grey-bg;
 }
@@ -43,7 +47,7 @@ a {
 }
 
 .title-nav{
-    width: 50%;
+    width: 70%;
     height: 28px;
     line-height: 28px;
     margin: 8px auto;
@@ -57,7 +61,16 @@ a {
     width: 50%;
     background: @white-color;
     color: @title-color!important;
+    text-align: center;
+    
+}
+
+.clients{
     border-radius: 5px 0 0 5px;
+}
+
+.clients-2{
+    border-radius: 0 5px 5px 0;
 }
 
 .mui-slider-indicator .mui-active.mui-indicator {
@@ -81,6 +94,61 @@ a {
 }
 
 
+.top-mode{
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    
+    .top-bg{
+        position: relative;
+        z-index: 1;
+    }
+    
+    .top-con{
+        position: absolute;
+        top:35%;
+        left: 38%;
+        width: 100px;
+        height: 100px;
+        background: @white-color;
+        text-align: center;
+        z-index: 2;
+        .border-radius(50%);
+    }
+    
+    .top-num{
+        font-size: 40px;
+        color: @brand-red;
+        margin-top: 30px;
+        font-weight: bold;
+    }
+    
+    .top-num-info{
+        margin-top: 10px;
+    }
+    
+}
+
+.check-nav{
+    background: @white-color;
+    padding: 6px 0;
+    
+    .check-items{
+        margin: 0 10px;
+    }
+}
+
+.top-lists{
+    padding: 6px 15px;
+    border-bottom: 1px @border-grey solid;
+}
+
+.top-list-title,.top-lists:nth-of-type(even){
+    background: @border-grey;
+}
+.top-lists:nth-of-type(odd){
+    background: @white-color;
+}
 .sb-model {
     margin: 10px 0 0;
     
@@ -169,13 +237,13 @@ a {
          .icon-size1{
              float: left;
              font-size: 54px;
-             color:#999;
+             color:@yellow-color;
         }
         
         .icon-size2{
             text-align: center;
             font-size: 32px;
-            color:#999;
+            color:@yellow-color;
         }
         
         .num-text{
@@ -191,6 +259,45 @@ a {
         }
      }
    
+}
+
+.bonus-list{
+    height: auto;
+    overflow: hidden;
+    padding: 6px 15px;
+    
+    .bonus-list-title{
+        font-size: @font-size-s16;
+        font-weight: bold;
+    }
+    
+    .color-1{
+        font-size: @font-size-s18;
+        color: @bg6;
+    }
+    
+    .bonus-list-con{
+        line-height: 25px;
+        text-indent: 24px;
+    }
+    
+    .bonus-table{
+        padding: 6px 0;
+        border-bottom: 1px @border-grey solid;
+    }
+    
+    .bonus-table:nth-of-type(odd){
+        background: @border-grey;
+    }
+    
+    .bonus-table:nth-of-type(even){
+        background: @white-color;
+    }
+    
+    .bonus-table-item{
+        text-align: center;
+    }
+    
 }
 
 .qrcode-mode{
@@ -231,6 +338,37 @@ a {
     .no-news{
         padding-top:100px;
         text-align: center;
+    }
+    
+    .client-list{
+        padding: 6px 0;
+    }
+    
+    .client-list-name{
+        padding: 6px 0;
+        border-bottom: 1px @border-grey solid;
+    }
+    
+    .client-list-info{
+        padding: 6px 0;
+        
+        a{
+            padding: 0 6px;
+            color: @blue-color;
+        }
+    }
+    
+    .names-info{
+        float: right;
+        color: @blue-color;
+    }
+    
+    .name-item{
+        display: inline-block;
+        width: 80%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-x: hidden;
     }
     
 }

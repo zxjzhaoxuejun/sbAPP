@@ -2,6 +2,10 @@ $(function() {
 	mui('footer').on('tap', 'a', function() {
 		document.location.href = this.href;
 	});
+	
+	mui.plusReady(function () { 
+		plus.screen.lockOrientation("portrait-primary"); 
+	}); 
 
 	mui.init();
 	var slider = mui("#slider");
