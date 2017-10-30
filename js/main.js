@@ -1,3 +1,9 @@
+//请求链接配置
+var configData={
+	"cityUrl":"http://shebao.uber56.com/mapi/social/get_city",//城市列表
+	"cityIdList":"http://shebao.uber56.com/mapi/social/get_social_config?city_id=", //城市社保数据列表
+}
+
 $(function() {
 	mui('footer').on('tap', 'a', function() {
 		document.location.href = this.href;
@@ -17,7 +23,7 @@ $(function() {
 		var _this = $(this);
 		$.ajax({
 			type: "get",
-			url: "http://shebao.uber56.com/mapi/social/get_city", //城市列表
+			url: configData.cityUrl, //城市列表
 			async: true,
 			success: function(data) {
 				var cityArr = [];
@@ -37,52 +43,8 @@ $(function() {
 	$('#sbBtnCacl').click(function() { //计算开始
 		sbCaclFun.sbCaclReturnFun();
 	});
-	$.ajax({////购买社保产品数据（个人）
-		type:"get",
-		url:"http://shebao.uber56.com/mapi/social/social_person",
-		async:true,
-		success:function(data){
-			var buySocialPerson=$.parseJSON(data);//购买社保产品数据
-			console.log($.parseJSON(data));
-			for(var i=0;i<buySocialPerson.length;i++){
-				buySocialPerson[i].product_name;//产品名
-				buySocialPerson[i].price;//价格
-				buySocialPerson[i].unit;//单位
-				buySocialPerson[i].id;
-				var url="http://shebao.uber56.com/mapi/social/social_person?product_id="+buySocialPerson[i].id;
-				$('.person-detail-url').eq(i).attr('href',url);
-				$('.sb-buy-text').eq(i).text(buySocialPerson[i].product_name+buySocialPerson[i].price+"元/人/"+buySocialPerson[i].unit)
-			}
-		},
-		error:function(){
-			alert("数据请求失败")
-		}
-	});
 	
 	
-	$.ajax({////社保托管产品数据(企业)
-		type:"get",
-		url:"http://shebao.uber56.com/mapi/social/social_ent",
-		async:true,
-		success:function(data){
-			var buySocialEnt=$.parseJSON(data);//购买社保产品数据（企业）
-			console.log(data);
-			for(var j=0;j<buySocialEnt.length;j++){
-				buySocialEnt[j].product_name;//产品名
-				buySocialEnt[j].price;//价格
-				buySocialEnt[j].unit;//单位
-				buySocialEnt[j].id;
-				var url="http://shebao.uber56.com/mapi/social/social_ent?product_id="+buySocialEnt[j].id;
-				$('.boss-detail-url').eq(j).attr('href',url);
-				$('.sb-buy-text').eq(j).text(buySocialEnt[j].product_name+buySocialEnt[j].price+"元/人/"+buySocialEnt[j].unit)
-			}
-		},
-		error:function(){
-			alert("数据请求失败")
-		}
-	});
-	
-
 })
 
 
@@ -180,7 +142,7 @@ var sbCaclFun = {
 			_this.text(checkVal).css('color', '#595757');
 			_this.attr('type-id', checkId);
 			if(num == 1) { //城市选择
-				var url="http://shebao.uber56.com/mapi/social/get_social_config?city_id="+checkId;
+				var url=configData.cityIdList+checkId;
 				$.ajax({ //请求每个城市社保比例
 					type: "get",
 					url: url, //城市社保列表

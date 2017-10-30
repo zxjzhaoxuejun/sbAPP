@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>社保计算器</title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/app-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="mui-bar mui-bar-nav sb-title-bg" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left sb-back-icon"></a>
+			<h1 class="mui-title">社保计算器</h1>
+		</header>
+
+		<!--内容-->
+		<div class="cacl-mode margin-head">
+			<!--修改手机号信息-->
+			<form class="sb-input-group" id="calcForm">
+				<ul class="mui-table-view not-after">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="selectCity">
+							<span class="sb-news-title">参保城市</span>
+							<span class="sb-news-title right-text" >请选择</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right sb-select" id="homeAddress">
+							<span class="sb-news-title">选择户籍</span>
+							<span class="sb-news-title right-text" >请选择</span>
+						</a>
+					</li>
+					<!--空格-->
+				<li class="empty-line"></li>
+				<!--空格-->
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right sb-select"  id="sbType">
+							<span class="sb-news-title">参保类型</span>
+							<span class="sb-news-title right-text" >请选择</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<span class="sb-news-title">社保方案</span>
+						<span class="sb-news-title right-text" id="sbFa"></span>
+					</li>
+					<li class="mui-table-view-cell" id="sbBase" >
+							<span class="sb-news-title">社保基数</span>
+							<input type="tel" placeholder="请输入" class="sbBase" id="sbBaseQj" maxlength="6">
+							<label for="lowestVal" id="lowest" style="display: none;" class="right-text"><input type="checkbox" id="lowestVal" >最低基数</label>
+					</li>
+				</ul>
+				<div class="sb-button-row">
+					<a class="sb-btn" id="sbBtnCacl">计算</a>
+				</div>
+				
+			</form>
+	
+		</div>
+    
+       
+       
+       <!--计算结果    表-->
+       <!--内容-->
+		<div class="cacl-mode margin-head" id="calcReturn" style="display: none;">
+			<div class="cacl-table-title">计算结果:</div>
+				<ul class="mui-table-view not-after">
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title">参保城市:</span>
+							<span class="sb-news-title" id="calcReturnCity"></span>
+					</li>
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title">参保类型:</span>
+							<span class="sb-news-title" id="calcReturnType"></span>
+					</li>
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title">社保方案:</span>
+							<span class="sb-news-title" id="calcReturnFa"></span>
+					</li>
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title">社保基数:</span>
+							<span class="sb-news-title" id="calcReturnBase"></span>
+					</li>
+				</ul>
+				
+				<!--列表-->
+				<ul class="mui-table-view not-after">
+					<!--标题-->
+					<li class="mui-table-view-cell grey-title-bg za-row">
+							<span class="sb-news-title mui-text-center za-col-4">类型</span>
+							<span class="sb-news-title mui-text-center za-col-5" >个人(%)</span>
+							<span class="sb-news-title mui-text-center za-col-5">个人缴纳</span>
+							<span class="sb-news-title mui-text-center za-col-5" >企业(%)</span>
+							<span class="sb-news-title mui-text-center za-col-5">企业缴纳</span>
+					</li>
+					<!--数据-->
+					<li class="mui-table-view-cell za-row" id="publicAccumulation">
+							<span class="sb-news-title mui-text-center za-col-4">公积金</span>
+							<span class="sb-news-title mui-text-center za-col-5" >8%</span>
+							<span class="sb-news-title mui-text-center za-col-5">177.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >19%</span>
+							<span class="sb-news-title mui-text-center za-col-5">421.61</span>
+					</li>
+					
+					<li class="mui-table-view-cell za-row" id="ylSb">
+							<span class="sb-news-title mui-text-center za-col-4">养老保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >8%</span>
+							<span class="sb-news-title mui-text-center za-col-5">177.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >19%</span>
+							<span class="sb-news-title mui-text-center za-col-5">421.61</span>
+					</li>
+					<li class="mui-table-view-cell za-row" id="sySb">
+							<span class="sb-news-title mui-text-center za-col-4">失业保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >0.4%</span>
+							<span class="sb-news-title mui-text-center za-col-5">7.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >0.6%</span>
+							<span class="sb-news-title mui-text-center za-col-5">14.23</span>
+					</li>
+					<li class="mui-table-view-cell za-row" id="gsSb">
+							<span class="sb-news-title mui-text-center za-col-4">工伤保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >8%</span>
+							<span class="sb-news-title mui-text-center za-col-5">177.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >19%</span>
+							<span class="sb-news-title mui-text-center za-col-5">421.61</span>
+					</li>
+					<li class="mui-table-view-cell za-row" id="sysSb">
+							<span class="sb-news-title mui-text-center za-col-4">生育保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >8%</span>
+							<span class="sb-news-title mui-text-center za-col-5">177.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >19%</span>
+							<span class="sb-news-title mui-text-center za-col-5">421.61</span>
+					</li>
+					<li class="mui-table-view-cell za-row" id="ylxSb">
+							<span class="sb-news-title mui-text-center za-col-4">医疗保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >0.4%</span>
+							<span class="sb-news-title mui-text-center za-col-5">7.22</span>
+							<span class="sb-news-title mui-text-center za-col-5" >0.6%</span>
+							<span class="sb-news-title mui-text-center za-col-5">14.23</span>
+					</li>
+					<li class="mui-table-view-cell za-row" id="bcSb">
+							<span class="sb-news-title mui-text-center za-col-4">残保险</span>
+							<span class="sb-news-title mui-text-center za-col-5" >0%</span>
+							<span class="sb-news-title mui-text-center za-col-5">0.00</span>
+							<span class="sb-news-title mui-text-center za-col-5" >2%</span>
+							<span class="sb-news-title mui-text-center za-col-5">78.98</span>
+					</li>
+					<li class="mui-table-view-cell" style="color:#f60;">
+							<span class="sb-news-title">合计</span>
+							<span class="sb-news-title right-text">￥<b id="calcReturnCount">0</b></span>
+					</li>
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title right-text" >个人缴纳：￥<b id="calcReturnPerson">0</b></span>
+					</li>
+					<li class="mui-table-view-cell">
+							<span class="sb-news-title right-text" >企业缴纳：￥<b id="calcReturnEnt">0</b></span>
+					</li>
+					
+				</ul>
+		</div>
+    <!--end-->
+       
+    
+    <script src="js/main.js"></script>
+	</body>
+
+</html>

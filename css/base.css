@@ -859,6 +859,94 @@ img {
   height: 200px;
   font-size: 14px;
 }
+.cacl-mode .sb-button-row {
+  width: 90%;
+  margin: 15px auto;
+  margin-top: 40px;
+}
+.cacl-mode .sbBase {
+  width: 45%;
+  height: 20px;
+  border: none;
+  font-size: 13px;
+}
+.cacl-mode #lowestVal {
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.right-text {
+  float: right;
+  margin-right: 20px;
+}
+.select-alert-mode {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.select-alert-mode .alert-mode-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.3;
+  z-index: 1;
+}
+.select-alert-mode .alert-list {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  z-index: 2;
+}
+.select-alert-mode .alert-list-con {
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.select-alert-mode .alert-list-con li:last-of-type:after {
+  background: transparent;
+}
+.select-alert-mode .select-title {
+  text-align: center;
+  background: #DEDEDE;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+}
+.select-alert-mode .radio-icon {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px #dedede solid;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.select-alert-mode .radio-icon-active {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ff8c00;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
 .mode-bg-white {
   background: #ffffff;
 }
