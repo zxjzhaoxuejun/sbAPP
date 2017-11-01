@@ -2,6 +2,10 @@
 var configData={
 	"cityUrl":"http://shebao.uber56.com/mapi/social/get_city",//城市列表
 	"cityIdList":"http://shebao.uber56.com/mapi/social/get_social_config?city_id=", //城市社保数据列表
+	"indexUrl":"http://shebao.uber56.com/sapi/welcome/index",//首页
+	"Top10Url":"http://shebao.uber56.com/sapi/index/top10",//排行榜10
+	"myIncome":"http://shebao.uber56.com/sapi/index/my_income",//我的收入
+	"myIncomeSale":"http://shebao.uber56.com/sapi/index/income_sale",//我的收入——业务收入
 }
 
 $(function() {
@@ -43,6 +47,55 @@ $(function() {
 	$('#sbBtnCacl').click(function() { //计算开始
 		sbCaclFun.sbCaclReturnFun();
 	});
+	
+	mui('body').on('tap', 'a', function() {
+		document.location.href = this.href;
+		var pathName=this.href;
+		var pathNameArr=pathName.split('/');
+		var projectName=pathNameArr[pathNameArr.length-1];
+	   if(projectName=="index.html"){
+	   	//首页数据获取与展示
+			$(function(){
+				$.ajax({
+					type: "get",
+					url: configData.indexUrl, //首页
+					async: true,
+					success: function(data) {
+						$('#ent_total').text(data.ent_total);
+						$('#person_total').text(data.person_total);
+						$('#amount').text(data.amount);
+						$('#agent_total').text(data.agent_total);
+						$('#agent_first_total').text(data.agent_first_total);
+						console.log(data)
+					},
+					error: function() {
+						alert("请求首页数据异常");
+					}
+				});
+			})
+		}else if(projectName=="myIncome.html"){
+			//我的收入
+			$(function(){
+				$.ajax({
+					type: "get",
+					url: configData.myIncome, 
+					async: true,
+					success: function(data) {
+						
+						console.log(data)
+					},
+					error: function() {
+						alert("请求我的收入数据异常");
+					}
+				});
+			})
+			
+		}
+	 
+	});
+	
+	
+	
 	
 	
 })
