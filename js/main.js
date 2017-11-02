@@ -1,14 +1,37 @@
 //请求链接配置
 var configData={
 	"cityUrl":"http://shebao.uber56.com/mapi/social/get_city",//城市列表
+	
 	"cityIdList":"http://shebao.uber56.com/mapi/social/get_social_config?city_id=", //城市社保数据列表
+	
 	"indexUrl":"http://shebao.uber56.com/sapi/welcome/index",//首页
+	
 	"Top10Url":"http://shebao.uber56.com/sapi/index/top10",//排行榜10
+	
 	"myIncome":"http://shebao.uber56.com/sapi/index/my_income",//我的收入
+	
 	"myIncomeSale":"http://shebao.uber56.com/sapi/index/income_sale",//我的收入——业务收入
+	
+	"myIncomeZxSale":"http://shebao.uber56.com/sapi/index/income_sale",//我的收入——直销收入
+	
+	"myRecoLists":"http://shebao.uber56.com/sapi/customers/my_reco_lists",//合伙人主页
+	
+	"myRecoListsItems":"http://shebao.uber56.com/sapi/customers/my_reco_lists",//合伙人主页-明细
+	
+	"ent_lists":" http://shebao.uber56.com/sapi/customers/ent_lists",//我的客户-企业客户
+	
+	"person_lists":"http://shebao.uber56.com/sapi/customers/person_lists",//我的客户-个人客户
+	
+	"createdList":"http://shebao.uber56.com/sapi/customers/created",//我的客户-新增企业/个人客户
+	
+	
+
 }
 
 $(function() {
+	var PAGEINDEX=$('#pageIndexVal').val();
+	
+	
 	mui('footer').on('tap', 'a', function() {
 		document.location.href = this.href;
 	});
@@ -48,12 +71,13 @@ $(function() {
 		sbCaclFun.sbCaclReturnFun();
 	});
 	
-	mui('body').on('tap', 'a', function() {
-		document.location.href = this.href;
-		var pathName=this.href;
-		var pathNameArr=pathName.split('/');
-		var projectName=pathNameArr[pathNameArr.length-1];
-	   if(projectName=="index.html"){
+//	mui('body').on('tap', 'a', function() {
+//		document.location.href = this.href;
+//		var pathName=this.href;
+//		var pathNameArr=pathName.split('/');
+//		var projectName=pathNameArr[pathNameArr.length-1];
+	   if(PAGEINDEX==='1'){
+	   	console.log(PAGEINDEX);
 	   	//首页数据获取与展示
 			$(function(){
 				$.ajax({
@@ -61,6 +85,18 @@ $(function() {
 					url: configData.indexUrl, //首页
 					async: true,
 					success: function(data) {
+						
+						var dataJson={
+								"ent_total": 0,
+								"person_total": 0,
+								"amount": 0,
+								"agent_total": 0,
+								"agent_first_total": 0
+								};
+								
+					 data=$.extend(true, dataJson,data);
+						
+						
 						$('#ent_total').text(data.ent_total);
 						$('#person_total').text(data.person_total);
 						$('#amount').text(data.amount);
@@ -73,14 +109,86 @@ $(function() {
 					}
 				});
 			})
-		}else if(projectName=="myIncome.html"){
+		}else if(PAGEINDEX==='11'){//我的收入
 			//我的收入
+			console.log(PAGEINDEX);
 			$(function(){
 				$.ajax({
 					type: "get",
 					url: configData.myIncome, 
 					async: true,
 					success: function(data) {
+						var dataJson={
+								  "amount": 99,
+								  "amount_sale": 88,
+								  "amount_profit": 11
+							};
+						 
+						 data=$.extend(true, dataJson,data);
+						 
+						$('#myAmount').text('￥'+data.amount);
+						var incomeData=[ //数据
+						{ "value": data.amount_sale, "name": "业务收入" },
+						{ "value": data.amount_profit, "name": "直销收入" },
+					];
+			var myChart = echarts.init(document.getElementById('myIncome'));
+			var option = {
+				title: {
+					text: ''
+				},
+				tooltip: {
+					//  	formatter: "{b}\n{c} ({d}%)",
+				},
+				series: [{
+					name: '我的收入',
+					type: 'pie',
+					radius: ['40%', '70%'], //圆弧的半径大小
+					center: ['50%', '50%'], //圆环的位置
+					avoidLabelOverlap: true,
+					label: {
+						normal: {
+							show: true,
+							position: 'left',
+							formatter: "{c}元\n ({d}%)",
+						},
+						emphasis: {
+							textStyle: {
+								fontSize: '12',
+								fontWeight: 'bold',
+							}
+						}
+					},
+					labelLine: {
+						normal: {
+							show: true
+						}
+					},
+					data: incomeData,
+					itemStyle: {
+						//通常情况下：
+						normal: {
+							show: true,
+							　　　　　　　　　　　　 //每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+							color: function(params) {
+								var colorList = ['rgb(250,166,32)', 'rgb(252,83,32)'];
+								return colorList[params.dataIndex];
+							}
+						},
+					},
+				}]
+			};
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+			
+			//业务收入
+			$('#ywIncome').text('￥'+incomeData[0].value);
+			//直销收入
+			$('#zxIncome').text('￥'+incomeData[1].value);
+			//更新时间
+			var nowTime=new Date();
+			var myTime=nowTime.getFullYear()+'-'+(nowTime.getMonth()+1)+'-'+nowTime.getDate()+' '+nowTime.getHours()+':'+nowTime.getMinutes();  
+			$('.update-time').text(myTime);
+						
 						
 						console.log(data)
 					},
@@ -90,14 +198,113 @@ $(function() {
 				});
 			})
 			
+		}else if(PAGEINDEX==='23'){//我的排名
+			//我的收入
+			console.log(PAGEINDEX);
+			$(function(){
+				$.ajax({
+					type: "get",
+					url: configData.Top10Url, 
+					async: true,
+					success: function(data) {
+						$('#ranking').text(data.ranking);
+						var html='';
+						for(var i=0;i<data.lists.length;i++){
+						html+='<div class="top-lists za-row"><div class="za-col-4"><span>"'+data.lists[i].id+'"</span></div><div class="za-col-5"><span>"'+data.lists[i].name+'"</span></div>';
+				        html+='<div class="za-col-5"><span>"'+data.lists[i].ent_total+'"</span></div><div class="za-col-5"><span>"'+data.lists[i].person_total+'"</span></div><div class="za-col-5"><span>"'+data.lists[i].amount+'"</span></div></div>';
+						}
+						
+						$('#tableLists').after(html);
+						
+						console.log(data)
+					},
+					error: function() {
+						alert("请求我的排名数据异常");
+					}
+				});
+			})
+			
+		}else if(PAGEINDEX==='16'){//业务收入
+			console.log(PAGEINDEX);
+			$(function(){
+				$.ajax({
+					type: "get",
+					url: configData.myIncomeSale, 
+					async: true,
+					success: function(data) {
+						var dataJson={
+							  "lists": [
+							      {"month": 100, "amount": "99", "amount_sale": "88", "amount_profit": "11"},
+							      {"month": 100, "amount": "99", "amount_sale": "88", "amount_profit": "12"}
+							   ]
+							};
+						 
+						 data=$.extend(true, dataJson,data);
+						 
+						 var html='';
+						 
+						for(var i=0;i<data.lists.length;i++){
+							html+='<li class="months"><div class="month-income"><div class="month-list">'+
+							'<span class="month-items">10</span><span>月收入</span>'+
+							'<span class="month-num">'+ data.lists[i].month+'</span></div>'+
+					        '<div class="month-money">'+ data.lists[i].amount+'</div></div>'+
+					        '<div class="month-user">'+
+						    '<span class="m-title">签单奖</span>'+
+							'<span class="m-title">'+ data.lists[i].amount_sale+'</span>'+
+							'<span class="m-title" style="margin-left: 50px;">提成</span>'+
+							'<span class="m-title">'+ data.lists[i].amount_profit+'</span></div></li>';
+						}
+						
+						$('#tableLists').append(html);
+						
+					},
+					error: function() {
+						alert("请求数据异常");
+					}
+				});
+			})
+		}else if(PAGEINDEX==='25'){//直销收入
+			console.log(PAGEINDEX);
+			$(function(){
+				$.ajax({
+					type: "get",
+					url: configData.myIncomeZxSale, 
+					async: true,
+					success: function(data) {
+						var dataJson={
+							  "lists": [
+							      {"month": 100, "amount": "99", "amount_sale": "88", "amount_profit": "11"},
+							      {"month": 100, "amount": "99", "amount_sale": "88", "amount_profit": "12"}
+							   ]
+							};
+						 
+						 data=$.extend(true, dataJson,data);
+						 
+						 var html='';
+						 
+						for(var i=0;i<data.lists.length;i++){
+							html+='<li class="months"><div class="month-income"><div class="month-list">'+
+							'<span class="month-items">10</span><span>月收入</span>'+
+							'<span class="month-num">'+ data.lists[i].month+'</span></div>'+
+					        '<div class="month-money">'+ data.lists[i].amount+'</div></div>'+
+					        '<div class="month-user">'+
+						    '<span class="m-title">一级</span>'+
+							'<span class="m-title">'+ data.lists[i].amount_sale+'</span>'+
+							'<span class="m-title" style="margin-left: 50px;">二级</span>'+
+							'<span class="m-title">'+ data.lists[i].amount_profit+'</span></div></li>';
+						}
+						
+						$('#tableLists').append(html);
+						
+					},
+					error: function() {
+						alert("请求数据异常");
+					}
+				});
+			})
 		}
 	 
-	});
-	
-	
-	
-	
-	
+
 })
 
 
